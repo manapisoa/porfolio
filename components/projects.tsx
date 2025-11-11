@@ -5,41 +5,50 @@ import Image from "next/image"
 
 export function Projects() {
   const projects = [
+    // {
+    //   title: "DevOps Burger",
+    //   description:
+    //     "Application de gestion de commandes de burgers avec interface utilisateur moderne et tableau de bord administrateur.",
+    //   image: "/image/DevOpsBurger.jpg",
+    //   technologies: ["React", "Node.js", "MongoDB", "Docker"],
+    //   github: "#",
+    //   demo: "#",
+    // },
     {
-      title: "E-Commerce Platform",
+      title: "Chat en temps réel",
       description:
-        "Plateforme e-commerce complète avec gestion des produits, panier, paiement et dashboard admin. Interface moderne et responsive.",
-      image: "/modern-ecommerce-interface.png",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      github: "https://github.com",
-      demo: "https://example.com",
+        "Application de messagerie instantanée avec authentification et conversations en temps réel.",
+      image: "/image/chat.jpeg",
+      technologies: ["React", "Socket.io", "Express", "Postgresql"],
+      github: "#",
+      demo: "#",
     },
     {
-      title: "Task Management App",
+      title: "Gestion HACCP",
       description:
-        "Application de gestion de tâches collaborative avec système de notifications en temps réel, drag & drop et filtres avancés.",
-      image: "/task-management-dashboard.png",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      github: "https://github.com",
-      demo: "https://example.com",
+        "Système de gestion HACCP pour la traçabilité et la sécurité alimentaire dans les établissements de restauration.",
+      image: "/image/haccp.jpeg",
+      technologies: ["django", "reactjs", "MySQL"],
+      github: "#",
+      demo: "#",
     },
     {
-      title: "Portfolio Builder",
+      title: "Gestion des stocks",
       description:
-        "Outil no-code permettant de créer et personnaliser son portfolio en quelques clics. Thèmes prédéfinis et éditeur visuel.",
-      image: "/portfolio-builder-editor-interface.jpg",
-      technologies: ["Next.js", "Tailwind CSS", "Supabase"],
-      github: "https://github.com",
-      demo: "https://example.com",
+        "Application complète de gestion des stocks avec suivi des entrées/sorties et alertes de réapprovisionnement.",
+      image: "/image/iventory.png",
+      technologies: ["django", "sqlite", "reactjs"],
+      github: "#",
+      demo: "#",
     },
     {
-      title: "Weather Dashboard",
+      title: "Système d'achats",
       description:
-        "Dashboard météo avec prévisions détaillées, cartes interactives et alertes personnalisées. Design minimaliste et données en temps réel.",
-      image: "/weather-dashboard-interface.png",
-      technologies: ["React", "TypeScript", "OpenWeather API"],
-      github: "https://github.com",
-      demo: "https://example.com",
+        "Plateforme de gestion des achats avec suivi des commandes, facturation et analyse des dépenses.",
+      image: "/image/purshase.png",
+      technologies: ["React", "Django", "PostgreSQL", "Redis"],
+      github: "#",
+      demo: "#",
     },
   ]
 

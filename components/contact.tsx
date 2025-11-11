@@ -104,10 +104,10 @@ export function Contact() {
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Email</h3>
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:manampymj@gmail.com"
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    hello@example.com
+                    manampymj@gmail.com
                   </a>
                 </div>
               </div>
@@ -118,8 +118,8 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Téléphone</h3>
-                  <a href="tel:+33123456789" className="text-muted-foreground hover:text-accent transition-colors">
-                    +33 1 23 45 67 89
+                  <a href="tel:+261382251528" className="text-muted-foreground hover:text-accent transition-colors">
+                    +261 38 22 515 28 
                   </a>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Localisation</h3>
-                  <p className="text-muted-foreground">Paris, France</p>
+                  <p className="text-muted-foreground">Antananarivo, Madagascar</p>
                 </div>
               </div>
             </div>
