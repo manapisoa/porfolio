@@ -1,70 +1,92 @@
-import { Card } from "@/components/ui/card"
-import { Briefcase, Calendar } from "lucide-react"
+// components/experience.tsx
+import { GraduationCap, BookOpen, Clock, Brain } from "lucide-react"
+
+const experiences = [
+  {
+    icon: GraduationCap,
+    title: "Formation certifiante",
+    description: "Certification complète de la Méthode Boclet avec Mohamed Boclet",
+    year: "2025"
+  },
+  {
+    icon: BookOpen,
+    title: "Spécialisation",
+    description: "Adaptation des techniques aux filières sélectives (médecine, droit, prépa, ingénieur)",
+    year: "2025"
+  },
+  {
+    icon: Clock,
+    title: "Accompagnement",
+    description: "Plus de 100 étudiants accompagnés avec succès en 1 an",
+    year: "2025-2026"
+  },
+  {
+    icon: Brain,
+    title: "Expertise",
+    description: "Maîtrise des techniques de mémorisation et d'apprentissage accéléré",
+    year: "Depuis 2025"
+  }
+]
 
 export function Experience() {
-  const experiences = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "Tech Company",
-      period: "2022 - Présent",
-      description:
-        "Développement d'applications web complexes avec React et Next.js. Lead technique sur plusieurs projets stratégiques. Mentorat d'équipe et mise en place de best practices.",
-      technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "AWS"],
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
-      description:
-        "Création de sites web et applications pour divers clients. Collaboration étroite avec les designers et chefs de projet. Optimisation des performances et SEO.",
-      technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-    },
-    {
-      title: "Frontend Developer",
-      company: "Startup",
-      period: "2019 - 2020",
-      description:
-        "Développement de l'interface utilisateur d'une plateforme SaaS. Intégration d'APIs REST. Participation active aux décisions techniques et design.",
-      technologies: ["JavaScript", "React", "Redux", "CSS"],
-    },
-  ]
-
   return (
-    <section id="experience" className="py-24 px-6 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="space-y-4 mb-16">
-          <p className="text-accent font-mono text-sm">Parcours</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Expérience</h2>
+    <section id="experience" className="py-20">
+      <div className="container mx-auto max-w-4xl px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Mon parcours avec la Méthode Boclet</h2>
+          <p className="text-xl text-muted-foreground">
+            Découvrez comment j'ai maîtrisé et perfectionné cette méthode pour vous
+          </p>
         </div>
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-card-foreground">{exp.title}</h3>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Briefcase className="h-4 w-4" />
-                    <span className="font-medium">{exp.company}</span>
+        <div className="relative">
+          {/* Ligne de temps */}
+          <div className="absolute left-1/2 w-1 h-full bg-gradient-to-b from-primary to-primary/20 -translate-x-1/2"></div>
+          
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div 
+                key={index} 
+                className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}
+              >
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
+                  <div className={`inline-block p-1 rounded-full bg-primary/10 ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'}`}>
+                    <exp.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mt-2">{exp.title}</h3>
+                  <p className="text-muted-foreground">{exp.description}</p>
+                </div>
+                
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pl-12' : 'pr-12 text-right'}`}>
+                  <div className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium`}>
+                    {exp.year}
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
-                  <span className="font-mono text-sm">{exp.period}</span>
-                </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
-
-              <div className="flex flex-wrap gap-2">
-                {exp.technologies.map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-accent/10 text-accent rounded-md text-xs font-medium">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </Card>
-          ))}
+        <div className="mt-16 bg-muted/50 p-8 rounded-xl">
+          <h3 className="text-2xl font-bold mb-4">Pourquoi me faire confiance ?</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="text-primary">•</span>
+              <span>Formée directement par Mohamed Boclet, expert reconnu en techniques d'apprentissage</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary">•</span>
+              <span>Résultats prouvés avec des centaines d'étudiants accompagnés</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary">•</span>
+              <span>Approche personnalisée adaptée à chaque profil d'apprenant</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary">•</span>
+              <span>Suivi personnalisé tout au long de la formation</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

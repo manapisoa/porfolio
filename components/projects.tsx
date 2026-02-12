@@ -1,112 +1,99 @@
-import { Card } from "@/components/ui/card"
+// components/projects.tsx
+import { BookText, BrainCircuit, Clock, Users } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
-import Image from "next/image"
+
+const projects = [
+  {
+    icon: BookText,
+    title: "Formation Complète",
+    description: "Maîtrisez l'ensemble des techniques de la Méthode Boclet en 6 semaines",
+    features: [
+      "12h de formation en visio",
+      "Groupes de 4-6 personnes",
+      "Accès aux replays",
+      "Support personnalisé"
+    ],
+    price: "300€ (au lieu de 490€)"
+  },
+  {
+    icon: BrainCircuit,
+    title: "Atelier Découverte",
+    description: "Initiation aux techniques clés de mémorisation et lecture rapide",
+    features: [
+      "3h d'atelier intensif",
+      "Exercices pratiques",
+      "Fiches méthodes offertes",
+      "Échange en direct"
+    ],
+    price: "97€"
+  },
+  {
+    icon: Clock,
+    title: "Accompagnement VIP",
+    description: "Suivi personnalisé pour des résultats optimaux",
+    features: [
+      "Séances individuelles",
+      "Programme sur mesure",
+      "Accès illimité",
+      "Support prioritaire"
+    ],
+    price: "À partir de 500€"
+  }
+]
 
 export function Projects() {
-  const projects = [
-    // {
-    //   title: "DevOps Burger",
-    //   description:
-    //     "Application de gestion de commandes de burgers avec interface utilisateur moderne et tableau de bord administrateur.",
-    //   image: "/image/DevOpsBurger.jpg",
-    //   technologies: ["React", "Node.js", "MongoDB", "Docker"],
-    //   github: "#",
-    //   demo: "#",
-    // },
-    {
-      title: "Chat en temps réel",
-      description:
-        "Application de messagerie instantanée avec authentification et conversations en temps réel.",
-      image: "/image/chat.jpeg",
-      technologies: ["React", "Socket.io", "Express", "Postgresql"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Gestion HACCP",
-      description:
-        "Système de gestion HACCP pour la traçabilité et la sécurité alimentaire dans les établissements de restauration.",
-      image: "/image/haccp.jpeg",
-      technologies: ["django", "reactjs", "MySQL"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Gestion des stocks",
-      description:
-        "Application complète de gestion des stocks avec suivi des entrées/sorties et alertes de réapprovisionnement.",
-      image: "/image/iventory.png",
-      technologies: ["django", "sqlite", "reactjs"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Système d'achats",
-      description:
-        "Plateforme de gestion des achats avec suivi des commandes, facturation et analyse des dépenses.",
-      image: "/image/purshase.png",
-      technologies: ["React", "Django", "PostgreSQL", "Redis"],
-      github: "#",
-      demo: "#",
-    },
-  ]
-
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="space-y-4 mb-16">
-          <p className="text-accent font-mono text-sm">Réalisations</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Projets</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Une sélection de mes projets récents, allant d'applications web complexes à des outils innovants.
+    <section id="offres" className="py-20 bg-muted/50">
+      <div className="container mx-auto max-w-6xl px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Nos Formations</h2>
+          <p className="text-xl text-muted-foreground">
+            Choisissez la formule qui correspond à vos besoins
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-xl transition-shadow">
-              <div className="relative h-64 overflow-hidden bg-muted">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-
-              <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-card-foreground">{project.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-secondary text-secondary-foreground rounded-md text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
+            <Card key={index} className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <CardHeader className="pb-3">
+                <div className="bg-primary/10 p-3 rounded-full w-fit mb-4">
+                  <project.icon className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1 flex flex-col">
+                <ul className="space-y-2 mb-6 flex-1">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{feature}</span>
+                    </li>
                   ))}
-                </div>
-
-                <div className="flex items-center gap-4 pt-2">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </a>
+                </ul>
+                <div className="mt-auto pt-4 border-t">
+                  <p className="text-lg font-semibold text-center">{project.price}</p>
+                  <Button className="w-full mt-4 bg-blue-600 hover:bg-blue-700">
+                    En savoir plus
                   </Button>
                 </div>
-              </div>
+              </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold mb-4">Vous hésitez ?</h3>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+            Réservez votre bilan offert de 20 minutes pour discuter de vos objectifs
+            et trouver ensemble la meilleure solution pour vous.
+          </p>
+          <Button size="lg" >
+            Je réserve mon bilan offert
+          </Button>
+          <button type="button"className="bg-blue-600 hover:bg-blue-700">Je réserve mon bilan offert
+          </button>
         </div>
       </div>
     </section>
