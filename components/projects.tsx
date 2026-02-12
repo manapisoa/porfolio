@@ -92,8 +92,7 @@ export function Projects() {
           <Button size="lg" >
             Je réserve mon bilan offert
           </Button>
-          <button type="button"className="bg-blue-600 hover:bg-blue-700">Je réserve mon bilan offert
-          </button>
+        
         </div>
       </div>
     </section>
